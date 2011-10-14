@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>Fat Fingers, a Javascript Library</title>
+<script src="fatfingers.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<style type="text/css">
+body {
+  font-family: sans-serif;
+}
+</style>
+<script>
+$(function () {
+  $('#save').click(function () {
+    alert('You hit save');
+    return false;
+  });
+  $('#share').click(function () {
+    alert('You hit share');
+    return false;
+  });
+});
+</script>
+</head>
+<body>
+
+<h1>Fat Fingers</h1>
+
+<div>The idea of this library is to handle cases when it's hard to
+determine what you clicked on.  This is particularly a problem on
+Mobile, but also on any touch interface: fingers are fat, you don't
+get a preview of the target (the mouse pointer), and the finger covers
+the target making precision hard.  So what is reasonably UI with a
+mouse can become very hard to navigate.  Fat Fingers tries to detect
+imprecise actions on a page, and turn them into modal selections. </div>
+
+<div>Some specific credit goes to <a
+href="https://market.android.com/details?id=com.andrewshu.android.reddit&hl=en">Reddit
+Is Fun</a> which provides an very modal interface on top of Reddit.</div>
+
+<div>Here's some examples:</div>
+
+<div>
+  Some links:
+  <a href="http://google.com" target="_blank">Go to <em>Google</em> (new page)</a>
+  <a href="http://google.com">Go to Google (same page)</a>
+  <a href="javascript:void(0)" id="save">Save <b>this</b></a>
+  <a href="#" id="share">Share</a>
+</div>
+
+<div>
+  <br><br><br>
+  The awful next links:<br>
+
+  <a href="#prev">&lt;&lt;</a>
+  <a href="#1">1</a>
+  <a href="#2">2</a>
+  <a href="#3">3</a>
+  <a href="#4">4</a>
+  <a href="#5">5</a>
+  <a href="#6">6</a>
+  <a href="#7">7</a>
+  <a href="#8">8</a>
+  <a href="#9">9</a>
+  <a href="#next">&gt;&gt;</a>
+
+</div>
+
+
+<div>
+  <br><br><br>
+  A slightly annoying form:<br>
+
+  <label for="name">Name:</label> <input type="text" id="name" style="width: 5em"><br>
+
+  Address: <input type="text" id="address" style="width: 20em"><br>
+  <textarea style="width: 100%; height: 10em">Some text</textarea><br>
+
+  Rate your experience:
+  <label for="check1">1</label> <input type="radio" name="checks" id="check1" value="1">
+  <label for="check2">2</label> <input type="radio" name="checks" id="check2" value="2">
+  <label for="check3">3</label> <input type="radio" name="checks" id="check3" value="3">
+  <label for="check4">4</label> <input type="radio" name="checks" id="check4" value="4">
+  <label for="check5">5</label> <input type="radio" name="checks" id="check5" value="5">
+
+
+
+</div>
+
+</body></html>
